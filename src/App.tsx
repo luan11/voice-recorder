@@ -1,25 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { RecordBox } from './components/RecordBox';
+import { RecordsList } from './components/RecordsList';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="container mx-auto grid grid-cols-11 gap-x-32">
+      <section className="col-span-5">
+        <RecordBox />
+      </section>
+
+      <section className="col-span-6">
+        <RecordsList />
+      </section>
+    </main>
   );
 }
 
