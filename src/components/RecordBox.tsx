@@ -1,4 +1,4 @@
-import iconPlay from '../assets/images/icons/play.svg';
+import iconPlay from '../assets/images/icons/play-circle.svg';
 
 export function RecordBox() {
 	return (
@@ -9,7 +9,7 @@ export function RecordBox() {
 			
 			<button 
 				type="button"
-				className="bg-button-green text-white uppercase py-3.5 px-12 flex items-center justify-center rounded-lg text-center font-mono transition-all hover:bg-green-300"
+				className="bg-button-green text-white uppercase py-3.5 px-12 flex items-center justify-center rounded-lg text-center font-mono transition-opacity duration-300 hover:opacity-75"
 			>
 				Iniciar
 				<img src={iconPlay} alt="Play" className="ml-2.5"/>
