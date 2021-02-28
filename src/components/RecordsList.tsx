@@ -2,8 +2,10 @@ import { useContext } from "react";
 import { RecordsContext } from "../contexts/RecordsContext";
 import { RecordsListItem } from "./RecordsListItem";
 
+import iconBlock from '../assets/images/icons/block.svg';
+
 export function RecordsList() {
-	const { records } = useContext(RecordsContext);
+	const { records, deleteAllRecords } = useContext(RecordsContext);
 	const list = records.map(({ id, name, file }) => {
 		return <RecordsListItem 
 			key={id}
@@ -14,12 +16,23 @@ export function RecordsList() {
 	});
 
 	return (
-		<div className="py-4 px-5 bg-white rounded-custom shadow-lg h-full">
+		<div className="py-4 px-5 bg-white rounded-custom shadow-lg h-full relative">
 			<h3 className="uppercase text-text mb-6 text-xl font-bold tracking-wider font-serif">Gravações</h3>
 
-			<div className="max-h-64 overflow-y-auto">
+			<div className="max-h-60 overflow-y-auto overflow-x-hidden">
 				{ list.length > 0 ? list : <p className="text-text font-mono text-sm italic">Nada gravado ainda...</p> }
 			</div>
+
+			{ list.length > 0 && (
+				<button 
+					type="button"
+					className="bg-button-red rounded-custom p-1 absolute right-5 bottom-4 transition-opacity duration-300 hover:opacity-75"
+					title="Deletar todas gravações"
+					onClick={deleteAllRecords}
+				>
+					<img src={iconBlock} alt="Delete all"/>
+				</button>
+			) }
 		</div>
 	);
 }

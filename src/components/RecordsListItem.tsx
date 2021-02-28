@@ -1,5 +1,7 @@
-import { RecordsContext } from '../contexts/RecordsContext';
 import { useContext } from 'react';
+import { RecordsContext } from '../contexts/RecordsContext';
+
+import { PlayRecordModal } from './PlayRecordModal';
 
 import iconPlay from '../assets/images/icons/play.svg';
 import iconSave from '../assets/images/icons/save.svg';
@@ -12,16 +14,20 @@ interface RecordsListItemProps {
 }
 
 export function RecordsListItem({ id, name, file }: RecordsListItemProps) {
-	const { deleteRecord } = useContext(RecordsContext);
+	const { isPlaying, deleteRecord, playTheRecord } = useContext(RecordsContext);
 
 	function handleDeleteRecord() {
 		deleteRecord(id);
 	}
 
+	function handlePlayTheRecord() {
+		playTheRecord(file);
+	}
+
 	return (
-		<div className="bg-bg rounded-custom shadow-sm w-full mb-4 relative py-3 flex justify-between items-center pl-20 overflow-hidden">
+		<div className="bg-bg rounded-custom shadow-sm w-full mb-4 relative py-4 flex justify-between items-center pl-20 overflow-hidden">
 			<div className="absolute left-0 top-0 bg-text text-white font-serif text-lg font-bold px-5 h-full flex justify-center items-center">
-				.{ id }
+				.{ String(id).padStart(2, '0') }
 			</div>
 
 			<p className="font-mono text-sm text-text">{ name }</p>
@@ -30,6 +36,7 @@ export function RecordsListItem({ id, name, file }: RecordsListItemProps) {
 				<button 
 					type="button"
 					className="mr-3 transition-transform duration-300 transform hover:scale-125"
+					onClick={ handlePlayTheRecord }
 				>
 					<img src={ iconPlay } alt="Play"/>
 				</button>
@@ -50,6 +57,8 @@ export function RecordsListItem({ id, name, file }: RecordsListItemProps) {
 					<img src={ iconX } alt="Delete"/>
 				</button>
 			</div>
+
+			{ isPlaying && <PlayRecordModal /> }
 		</div>
 	);
 }
