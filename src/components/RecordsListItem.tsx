@@ -19,7 +19,7 @@ export function RecordsListItem({ id, name, file }: RecordsListItemProps) {
 	}
 
 	return (
-		<div className="bg-bg rounded-lg shadow-sm w-full mb-4 relative py-3 flex justify-between items-center pl-20 overflow-hidden">
+		<div className="bg-bg rounded-custom shadow-sm w-full mb-4 relative py-3 flex justify-between items-center pl-20 overflow-hidden">
 			<div className="absolute left-0 top-0 bg-text text-white font-serif text-lg font-bold px-5 h-full flex justify-center items-center">
 				.{ id }
 			</div>

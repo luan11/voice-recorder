@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useEffect, useState } from "react";
 
 type Record = {
 	id: number;
@@ -10,6 +10,9 @@ interface RecordsContextData {
 	isRecording: boolean;
 	isRecordingFinished: boolean;
 	records: Record[];
+	hours: number;
+	minutes: number;
+	seconds: number;
 	startRecording: () => void;
 	stopRecording: () => void;
 	deleteRecord: (toDeleteId: number) => void;
@@ -21,6 +24,8 @@ interface RecordsProviderProps {
 }
 
 export const RecordsContext = createContext({} as RecordsContextData);
+
+let timerTimeout: NodeJS.Timeout;
 
 export function RecordsProvider({ children }: RecordsProviderProps) {
 	const [isRecording, setIsRecording] = useState(false);
@@ -42,6 +47,11 @@ export function RecordsProvider({ children }: RecordsProviderProps) {
 			file: null
 		}
 	]);
+	const [timer, setTimer] = useState(0);
+
+	const hours = Math.floor(timer / 3600);
+	const minutes = Math.floor(timer / 60);
+	const seconds = timer % 60;
 
 	function startRecording() {
 		setIsRecording(true);
@@ -50,6 +60,8 @@ export function RecordsProvider({ children }: RecordsProviderProps) {
 	function stopRecording() {
 		setIsRecording(false);
 		setIsRecordingFinished(true);
+		setTimer(0);
+		clearTimeout(timerTimeout);
 	}
 
 	function deleteRecord(toDeleteId: number) {		
@@ -62,12 +74,23 @@ export function RecordsProvider({ children }: RecordsProviderProps) {
 		setRecords([]);
 	}
 
+	useEffect(() => {
+		if(isRecording) {
+			timerTimeout = setTimeout(() => {
+				setTimer(timer + 1);
+			}, 1000);
+		}
+	}, [isRecording, timer]);
+
 	return (
 		<RecordsContext.Provider
 			value={{
 				isRecording,
 				isRecordingFinished,
 				records,
+				hours,
+				minutes,
+				seconds,
 				startRecording,
 				stopRecording,
 				deleteRecord,

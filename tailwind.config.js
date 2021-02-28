@@ -3,17 +3,23 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Roboto', 'sans-serif'],
+        serif: ['Roboto Slab', 'serif'],
+        mono: ['Roboto Mono', 'monospace']
+      },
       colors: {
         'bg': '#FAFAFA',
         'text': '#424242', 
         'button-green': '#2DE38C',
         'button-red': '#EA4848'
       },
-    },
-    fontFamily: {
-      sans: ['Roboto', 'sans-serif'],
-      serif: ['Roboto Slab', 'serif'],
-      mono: ['Roboto Mono', 'monospace']
+      borderRadius: {
+        'custom': '10px'
+      },
+      boxShadow: {
+        inner: 'inset 0px 0px 6px rgba(66, 66, 66, 0.2)'
+      },
     },
   },
   variants: {
