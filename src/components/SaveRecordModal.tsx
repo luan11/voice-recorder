@@ -12,10 +12,10 @@ export function SaveRecordModal() {
 	}
 
 	return (
-		<div className="fixed left-0 top-0 bottom-0 right-0 flex justify-center items-center z-10 bg-text bg-opacity-60">
-			<div className="w-full max-w-md py-10 px-5 bg-white rounded-custom shadow-lg">
+		<div className="fixed left-0 top-0 bottom-0 right-0 flex justify-center items-center z-10 bg-text bg-opacity-60 dark:bg-black dark:bg-opacity-50">
+			<div className="w-full max-w-md py-10 px-5 bg-white dark:bg-text rounded-custom shadow-lg lg:mx-0 mx-4">
 				<header>
-					<h3 className="uppercase text-text mb-9 text-2xl font-bold tracking-wider font-serif text-left">Salvar</h3>
+					<h3 className="uppercase text-text dark:text-gray-50 mb-9 text-2xl font-bold tracking-wider font-serif text-left">Salvar</h3>
 				</header>
 
 				<main className="mb-11">
@@ -27,7 +27,7 @@ export function SaveRecordModal() {
 							onInput={handleSetCurrentRecordName}
 						/>
 
-						<span className="w-2/12 bg-text text-white text-center flex items-center justify-center rounded-custom rounded-l-none">.mp3</span>
+						<span className="w-2/12 bg-text dark:bg-gray-400 text-white text-center flex items-center justify-center rounded-custom rounded-l-none">.mp3</span>
 					</div>
 				</main>
 

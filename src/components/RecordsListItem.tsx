@@ -25,17 +25,17 @@ export function RecordsListItem({ id, name, file }: RecordsListItemProps) {
 	}
 
 	return (
-		<div className="bg-bg rounded-custom shadow-sm w-full mb-4 relative py-4 flex justify-between items-center pl-20 overflow-hidden">
-			<div className="absolute left-0 top-0 bg-text text-white font-serif text-lg font-bold px-5 h-full flex justify-center items-center">
+		<div className="bg-bg dark:bg-bg-dark rounded-custom shadow-sm w-full mb-4 relative py-4 flex justify-between items-center pl-20 overflow-hidden lg:flex-nowrap flex-wrap">
+			<div className="absolute left-0 top-0 bg-text dark:bg-gray-400 text-white font-serif text-lg font-bold px-5 h-full flex justify-center items-center">
 				.{ String(id).padStart(2, '0') }
 			</div>
 
-			<p className="font-mono text-sm text-text">{ name }</p>
+			<p className="font-mono text-sm text-text dark:text-gray-50 lg:break-normal break-all">{ name }</p>
 
 			<div className="mr-5 flex">
 				<button 
 					type="button"
-					className="mr-3 transition-transform duration-300 transform hover:scale-125"
+					className="mr-3 transition-transform duration-300 transform hover:scale-125 dark:invert"
 					onClick={ handlePlayTheRecord }
 				>
 					<img src={ iconPlay } alt="Play"/>
@@ -44,7 +44,7 @@ export function RecordsListItem({ id, name, file }: RecordsListItemProps) {
 				<a
 					href={file}
 					download={name}
-					className="mr-3 transition-transform duration-300 transform hover:scale-125"
+					className="mr-3 transition-transform duration-300 transform hover:scale-125 dark:invert"
 				>
 					<img src={ iconSave } alt="Save"/>
 				</a>

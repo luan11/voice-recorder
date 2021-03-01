@@ -118,6 +118,11 @@ export function RecordsProvider({ children }: RecordsProviderProps) {
 
 	function cancelSaveRecord() {
 		setIsRecordingFinished(false);
+		setCurrentRecord({
+			id: -1,
+			name: '',
+			file: null
+		});
 	}
 
 	function setCurrentRecordName(name: string) {

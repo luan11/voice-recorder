@@ -5,13 +5,13 @@ import { RecordsList } from './components/RecordsList';
 
 function App() {
   return (
-    <main className="container mx-auto grid grid-cols-11 gap-x-32">
+    <main className="container mx-auto lg:grid lg:grid-cols-11 lg:gap-x-32 lg:px-0 px-4">
       <RecordsProvider>
-        <section className="col-span-5">
+        <section className="lg:col-span-5 lg:mb-0 mb-8">
           <RecordBox />
         </section>
 
-        <section className="col-span-6">
+        <section className="lg:col-span-6">
           <RecordsList />
         </section>
       </RecordsProvider>

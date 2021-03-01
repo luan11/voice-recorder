@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	@variants dark {
+		.invert {
+			filter: invert(1);
+		}
+	}
+}

@@ -7,10 +7,10 @@ export function PlayRecordModal() {
 	const { currentPlaying, stopTheRecord } = useContext(RecordsContext);
 
 	return (
-		<div className="fixed left-0 top-0 bottom-0 right-0 flex justify-center items-center z-10 bg-text bg-opacity-60">
-			<div className="w-full max-w-md py-10 px-5 bg-white rounded-custom shadow-lg relative">
+		<div className="fixed left-0 top-0 bottom-0 right-0 flex justify-center items-center z-10 bg-text bg-opacity-60 dark:bg-black dark:bg-opacity-50">
+			<div className="w-full max-w-md py-10 px-5 bg-white dark:bg-text rounded-custom shadow-lg relative lg:mx-0 mx-4">
 				<header>
-					<h3 className="uppercase text-text mb-16 text-2xl font-bold tracking-wider font-serif text-left">Reproduzir</h3>
+					<h3 className="uppercase text-text dark:text-gray-50 mb-16 text-2xl font-bold tracking-wider font-serif text-left">Reproduzir</h3>
 
 					<button
 						type="button"

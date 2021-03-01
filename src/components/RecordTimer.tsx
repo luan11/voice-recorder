@@ -9,15 +9,15 @@ export function RecordTimer() {
 	const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('');
 
 	return (
-		<div className="font-mono font-medium text-text mb-10 text-4xl">
-			<span className="px-2 py-0.5 shadow-inner rounded-custom mr-1">{ hourLeft }</span>
-			<span className="px-2 py-0.5 shadow-inner rounded-custom mr-1">{ hourRight }</span>
+		<div className="font-mono font-medium text-text dark:text-gray-50 mb-10 text-4xl">
+			<span className="px-2 py-0.5 shadow-inner rounded-custom mr-1 dark:bg-bg-dark">{ hourLeft }</span>
+			<span className="px-2 py-0.5 shadow-inner rounded-custom mr-1 dark:bg-bg-dark">{ hourRight }</span>
 			<span className="mr-1">:</span>
-			<span className="px-2 py-0.5 shadow-inner rounded-custom mr-1">{ minuteLeft }</span>
-			<span className="px-2 py-0.5 shadow-inner rounded-custom mr-1">{ minuteRight }</span>
+			<span className="px-2 py-0.5 shadow-inner rounded-custom mr-1 dark:bg-bg-dark">{ minuteLeft }</span>
+			<span className="px-2 py-0.5 shadow-inner rounded-custom mr-1 dark:bg-bg-dark">{ minuteRight }</span>
 			<span className="mr-1">:</span>
-			<span className="px-2 py-0.5 shadow-inner rounded-custom mr-1">{ secondLeft }</span>
-			<span className="px-2 py-0.5 shadow-inner rounded-custom mr-1">{ secondRight }</span>
+			<span className="px-2 py-0.5 shadow-inner rounded-custom mr-1 dark:bg-bg-dark">{ secondLeft }</span>
+			<span className="px-2 py-0.5 shadow-inner rounded-custom mr-1 dark:bg-bg-dark">{ secondRight }</span>
 		</div>
 	);
 }

@@ -16,11 +16,11 @@ export function RecordsList() {
 	});
 
 	return (
-		<div className="py-4 px-5 bg-white rounded-custom shadow-lg h-full relative">
-			<h3 className="uppercase text-text mb-6 text-xl font-bold tracking-wider font-serif">Gravações</h3>
+		<div className="py-4 px-5 bg-white dark:bg-text rounded-custom shadow-lg h-full relative">
+			<h3 className="uppercase text-text dark:text-gray-50 mb-6 text-xl font-bold tracking-wider font-serif">Gravações</h3>
 
-			<div className="max-h-60 overflow-y-auto overflow-x-hidden">
-				{ list.length > 0 ? list : <p className="text-text font-mono text-sm italic">Nada gravado ainda...</p> }
+			<div className="lg:max-h-60 max-h-72 overflow-y-auto overflow-x-hidden">
+				{ list.length > 0 ? list : <p className="text-text dark:text-gray-50 font-mono text-sm italic">Nada gravado ainda...</p> }
 			</div>
 
 			{ list.length > 0 && (

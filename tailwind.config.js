@@ -1,6 +1,6 @@
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
       fontFamily: {
@@ -9,8 +9,11 @@ module.exports = {
         mono: ['Roboto Mono', 'monospace']
       },
       colors: {
-        'bg': '#FAFAFA',
-        'text': '#424242', 
+        'bg': {
+          DEFAULT: '#FAFAFA',
+          dark: '#2a2a2a'
+        },
+        'text': '#424242',
         'button-green': '#2DE38C',
         'button-red': '#EA4848'
       },
