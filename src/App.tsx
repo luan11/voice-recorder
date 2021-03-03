@@ -15,28 +15,43 @@ function App() {
   const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(false);
 
   function handleDarkMode() {
-    if (htmlElement) {
-      setIsDarkModeEnabled(!isDarkModeEnabled);
-
+    setIsDarkModeEnabled(!isDarkModeEnabled);
+    if (htmlElement) {      
       if (isDarkModeEnabled) {
         Cookies.set('color_mode', 'dark', {
           expires: 365
         });
+
+        htmlElement.classList.add('dark');
       } else {
         Cookies.remove('color_mode');
-      }      
 
-      htmlElement.classList.toggle('dark');
+        htmlElement.classList.remove('dark');
+      }
     }
   }
 
   useEffect(() => {
     if (Cookies.get('color_mode')) {
-      if (htmlElement) {
-        htmlElement.classList.add('dark');
-      }
+      setIsDarkModeEnabled(true);
     }
   }, []);
+
+  useEffect(() => {
+    if (htmlElement) {
+      if (isDarkModeEnabled) {
+        htmlElement.classList.add('dark');
+
+        Cookies.set('color_mode', 'dark', {
+          expires: 365
+        });
+      } else {
+        htmlElement.classList.remove('dark');
+
+        Cookies.remove('color_mode');
+      }
+    }
+  }, [isDarkModeEnabled]);
 
   return (
     <main className="container mx-auto lg:grid lg:grid-cols-11 lg:gap-x-32 lg:px-0 px-4">
