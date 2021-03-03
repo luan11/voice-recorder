@@ -15,7 +15,9 @@
 	<img alt="Demo" src="docs/screenshot.jpg">
 </p>
 
-# Table of Content
+<h1 align="center">
+	Table of Content
+</h1>
 
 <p align="center">
  <a href="#-technologies">Technologies</a> •
@@ -28,6 +30,7 @@
 - [ReactJS](https://reactjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [slugify](https://www.npmjs.com/package/slugify)
+- [js-cookie](https://www.npmjs.com/package/js-cookie)
 - [VS Code](https://code.visualstudio.com/)
 
 ### 💡 How To Use
